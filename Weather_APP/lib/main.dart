@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:prcticeflutter/Screens/Weather_front.dart';
 import 'package:prcticeflutter/Screens/Weather_second.dart';
-import 'package:prcticeflutter/widgets/Api_Integration.dart';
-import 'package:prcticeflutter/widgets/BottomSheet.dart';
-import 'package:prcticeflutter/widgets/MyAlertDialog.dart';
-import 'package:prcticeflutter/widgets/MyAnimatedText.dart';
-
 void main() {
   runApp(const MyApp());
 }

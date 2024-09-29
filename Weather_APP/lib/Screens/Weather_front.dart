@@ -1,8 +1,24 @@
+import 'dart:async';
+
 import'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:prcticeflutter/Screens/Weather_second.dart';
-class Weather_front extends StatelessWidget {
+class Weather_front extends StatefulWidget {
   const Weather_front({super.key});
 
+  @override
+  State<Weather_front> createState() => _Weather_frontState();
+}
+
+class _Weather_frontState extends State<Weather_front> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Timer(Duration(seconds: 3), (){
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Weather_second()));
+    });
+  }
   @override
   Widget build(BuildContext context) {
     var height=MediaQuery.of(context).size.height;
@@ -42,23 +58,27 @@ class Weather_front extends StatelessWidget {
 
             ),
           ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Color(0xffDDB130),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30)
-              ),
-              minimumSize: Size(200, 50)
-            ),
-              onPressed: (){
-              Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>Weather_second()));
-              },
-              child: Text('Get Started',style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.w600,
-                color: Color(0xff3E2D8F),
-                fontFamily: 'playfont'
-              ),))
+          SpinKitDoubleBounce(
+            color: Color(0xff42A5F5),
+    size: 50.0,
+    ),
+          // ElevatedButton(
+          //   style: ElevatedButton.styleFrom(
+          //     backgroundColor: Color(0xffDDB130),
+          //     shape: RoundedRectangleBorder(
+          //       borderRadius: BorderRadius.circular(30)
+          //     ),
+          //     minimumSize: Size(200, 50)
+          //   ),
+          //     onPressed: (){
+          //     Navigator.pushReplacement(context, MaterialPageRoute(builder:(context)=>Weather_second()));
+          //     },
+          //     child: Text('Get Started',style: TextStyle(
+          //       fontSize: 20,
+          //       fontWeight: FontWeight.w600,
+          //       color: Color(0xff3E2D8F),
+          //       fontFamily: 'playfont'
+          //     ),))
         ],
       ),
     );
